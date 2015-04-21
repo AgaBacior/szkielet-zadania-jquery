@@ -1,9 +1,13 @@
 $(function() {
 	var click = 0;
 	var tablica = ['red', 'green', 'blue'];
-	
-	$('button').on("click", function(e) {
-			$('p').css('color', tablica[click % 3]);
-			click++
+	var kolor = 0; 
+	$('button').on("click", function() {
+			
+			$('p').each(function(){
+				$(this).css('color', tablica[(click + kolor) % 3]);				
+				kolor++
+			});
+		click++	
 	});
 });
